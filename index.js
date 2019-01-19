@@ -66,8 +66,11 @@ function fibonacci() {
 }
 
 // Calls the random function and assigns the values in the numbers array
-const randomIndex = Math.floor(Math.random()*randomFunctions.length);
-randomFunctions[randomIndex]();
+function callRandomFunction() {
+    const randomIndex = Math.floor(Math.random()*randomFunctions.length);
+    randomFunctions[randomIndex]();
+}
+callRandomFunction();
 
 // Defines the element for creating a span element
 function createSpan(element) {
@@ -86,8 +89,18 @@ displayPattern();
 // Checks the users input against the last (hidden) element in the array
 function guess() {
     if (nextNumber.value == numbers[numbers.length-1]) {
-        result.innerHTML = "You win!"
+        result.innerHTML = "You win!";
+        next.style.display = "block";
+        hint.innerHTML = "";
     } else {
         result.innerHTML = "Nope, try again"
     }
+}
+
+// Function to call the next pattern
+function nextPattern() {
+    document.getElementById("display-pattern").innerHTML = "";
+    numbers = [];
+    callRandomFunction();
+    displayPattern();
 }
