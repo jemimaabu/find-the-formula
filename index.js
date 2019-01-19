@@ -5,7 +5,7 @@ var result = document.getElementById("result");
 var numbers = [];
 
 // Array containing all random functions to be called. Function name must be included here
-var randomFunctions = [addSquares, twiceAdded,subtractSquare,fibonacci];
+var randomFunctions = [addSquares, twiceAdded,subtractCube,cubedAdd,fibonacci];
 
 function addSquares() {
     //Set first element as random number between 1 and 9
@@ -29,10 +29,16 @@ function twiceAdded() {
     }
 }
 
-function subtractSquare() {
+function subtractCube() {
     //Not all number sequences require the first value to be random. This one, for example, just uses the position to iterate through the function
     for (var i = 0; i < 5; i++) {
         numbers.push((Math.pow(i+1,3))-(i+1))
+    }
+}
+
+function cubedAdd() {
+    for (var i = 0; i < 5; i++) {
+        numbers.push((Math.pow(i+1,3))+((i+2)*(i+3)));
     }
 }
 
