@@ -10,11 +10,10 @@ ___
 
 # Open Source
 This project is open to contributions from the public. 
-Basically, if you're a beginner, think of it as your introduction to open source. 
-And if you've been open sourcing for a while, here's another contribution to add to your belt.
+If you're a math nerd then feel free to add your own number pattern to the game (the more difficult it is to figure out, the better).
 
 ## Contributing
-Checkout [CONTRIBUTING.md](.github/CONTRIBUTING.md) for details on creating pull requests and solving issues and all that jazz.
+Checkout [CONTRIBUTING.md](.github/CONTRIBUTING.md) for details on adding patterns.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](.github/LICENSE) file for details
