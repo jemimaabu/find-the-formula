@@ -4,6 +4,7 @@ var result = document.getElementById("result");
 
 /** The hint value shows up after the user has tried a sequence more than 3 times, if the function assigns a value to it */
 var hint = document.getElementById("hint");
+var tries = 0;
 
 /** The numbers array gets it's value based on which ever option is called */
 var numbers = [];
@@ -88,11 +89,15 @@ displayPattern();
 
 // Checks the users input against the last (hidden) element in the array
 function guess() {
+    tries++;
     if (nextNumber.value == numbers[numbers.length-1]) {
         result.innerHTML = "You win!";
         next.style.display = "block";
         hint.innerHTML = "";
     } else {
+        if (tries >= 3 ) {
+            hint.style.display = "block";
+        }
         result.innerHTML = "Nope, try again"
     }
 }

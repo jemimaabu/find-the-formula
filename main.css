@@ -15,8 +15,12 @@
     border: 1px solid;
 }
 
-#hint:empty {
+#hint {
     display: none;
+}
+
+#hint::before {
+    content: "Hint: "
 }
 
 #next-pattern {
