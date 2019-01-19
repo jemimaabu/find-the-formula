@@ -6,7 +6,7 @@ var result = document.getElementById("result");
 var hint = document.getElementById("hint");
 var tries = 0;
 
-/** The numbers array gets it's value based on which ever option is called */
+/** The numbers array gets its values from whichever function is called */
 var numbers = [];
 
 /**  Array containing all random functions to be called. Function name must be included here */
