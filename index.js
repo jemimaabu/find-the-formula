@@ -92,8 +92,8 @@ function guess() {
     tries++;
     if (nextNumber.value == numbers[numbers.length-1]) {
         result.innerHTML = "You win!";
-        next.style.display = "block";
         hint.innerHTML = "";
+        setTimeout(function(){ nextPattern(), nextNumber.value="" }, 1000);
     } else {
         if (tries >= 3 ) {
             hint.style.display = "block";
@@ -104,6 +104,8 @@ function guess() {
 
 // Function to call the next pattern
 function nextPattern() {
+    result.innerHTML = "";
+    hint.style.display = "none";
     document.getElementById("display-pattern").innerHTML = "";
     numbers = [];
     callRandomFunction();
