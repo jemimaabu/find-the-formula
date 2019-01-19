@@ -2,11 +2,16 @@ var nextNumber = document.getElementById("next-number");
 var display = document.getElementById("display-pattern");
 var result = document.getElementById("result");
 
+/** The hint value shows up after the user has tried a sequence more than 3 times, if the function assigns a value to it */
+var hint = document.getElementById("hint");
+
+/** The numbers array gets it's value based on which ever option is called */
 var numbers = [];
 
-// Array containing all random functions to be called. Function name must be included here
+/**  Array containing all random functions to be called. Function name must be included here */
 var randomFunctions = [addSquares, twiceAdded,subtractCube,cubedAdd,fibonacci];
 
+/** Define your functions here */
 function addSquares() {
     //Set first element as random number between 1 and 9
     var randomFirst = Math.floor(Math.random()*9)+1;
@@ -19,6 +24,8 @@ function addSquares() {
         // Write function that returns number sequence according to formula
         numbers.push(numbers[i]+Math.pow([i+1],2))
     }
+    //Assign a value to 'hint' if you want to provide a hint, if not leave it blank
+    hint.innerHTML="Think of squares"
 }
 
 function twiceAdded() {
@@ -30,16 +37,20 @@ function twiceAdded() {
 }
 
 function subtractCube() {
-    //Not all number sequences require the first value to be random. This one, for example, just uses the position to iterate through the function
-    for (var i = 0; i < 5; i++) {
+    var randomFirst = Math.floor(Math.random()*3)+1;
+    //This function is a different pattern than the rest as it uses the index position to iterate rather than a value
+    for (i = randomFirst; i < randomFirst+5; i++) {
         numbers.push((Math.pow(i+1,3))-(i+1))
     }
+    hint.innerHTML = "Try raising to the 3rd power"
 }
 
 function cubedAdd() {
-    for (var i = 0; i < 5; i++) {
+    var randomFirst = Math.floor(Math.random()*3)+1;
+    for (i = randomFirst; i < randomFirst+5; i++) {
         numbers.push((Math.pow(i+1,3))+((i+2)*(i+3)));
     }
+    hint.innerHTML = "Think of cubes"
 }
 
 function fibonacci() {
@@ -54,21 +65,25 @@ function fibonacci() {
     }
 }
 
+// Calls the random function and assigns the values in the numbers array
 const randomIndex = Math.floor(Math.random()*randomFunctions.length);
 randomFunctions[randomIndex]();
 
+// Defines the element for creating a span element
 function createSpan(element) {
     var span = document.createElement("span")
     span.innerHTML = element;
     display.appendChild(span);
 }
 
+// Removes the last element of the array and uses mapping to display the rest in span elements
 function displayPattern() {
     numbers.slice(0,-1).map(element => createSpan(element));
 }
 
 displayPattern();
 
+// Checks the users input against the last (hidden) element in the array
 function guess() {
     if (nextNumber.value == numbers[numbers.length-1]) {
         result.innerHTML = "You win!"
