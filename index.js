@@ -10,7 +10,7 @@ var tries = 0;
 var numbers = [];
 
 /**  Array containing all random functions to be called. Function name must be included here */
-var randomFunctions = [addSquares, twiceAdded,subtractCube,cubedAdd,fibonacci];
+var randomFunctions = [addSquares, twiceAdded,subtractCube,cubedAdd,fibonacci, exponential_one, exponential_two, exponential_three, exponential_four, log_e]];
 
 /** Define your functions here */
 function addSquares() {
@@ -66,6 +66,59 @@ function fibonacci() {
     }
 }
 
+function exponential_one() {
+    var x = Math.floor(Math.random()*20)+1;
+    let term = (n) => Math.pow((1 + (x/n)), n);
+    for (let i=0; i <= 5; i++){
+        num = toFixed(term(i), 2);        //using this to convert to 2 decimal places
+        numbers.push(num);
+    }
+    hint.innerHTML = "what do you know about exponential series";
+}
+
+function exponential_two() {
+    var n = Math.floor(Math.random()*5)+1;
+    let term = (i) => Math.pow(-1, n) * Math.pow(i, n);
+    for (let i=0; i < 5; i++) {
+        numbers.push(term(i));
+    }
+    hint.innerHTML = "look again, think in powers"
+}
+
+function exponential_three() {
+    let randomnum = Math.floor(Math.random() * 10) + 1;
+    for (let i=0; i<5; i++){
+        let power = i+1;
+        let value = Math.pow(randomnum, power) / power;
+        let rounded = toFixed(value, 2);
+        numbers.push(rounded);
+    }
+    hint.innerHTML = "A number is raised to the index and divided by the index";
+}
+
+function exponential_four() {
+    let randomnum = (Math.random() * 5) + 1;
+    for (let i=0; i<5; i++){
+        let value = Math.exp(-1/Math.pow(randomnum+i, 2));
+        let rounded = toFixed(value, 2);
+        numbers.push(rounded);
+    }
+    hint.innerHTML = "An exponential of a number";
+}
+
+function log_e() {
+    let randomnum = (Math.random() * 10) + 1;
+    for (let i=0; i<5; i++) {
+        let value = Math.log(randomnum+i)    
+        numbers.push(toFixed(value, 2));
+    }
+    hint.innerHTML = "Find out a random number added to index and Try some log on the it"
+}
+function toFixed( num, precision ) {        // This function helps to round up numbers. I didn't rely on Math.round because it doesn't round up number e.g math.round(6.345) = 6.34 instead of 6.35
+    return (+(Math.round(+(num + 'e' + precision)) + 'e' + -precision)).toFixed(precision);
+}
+
+
 // Calls the random function and assigns the values in the numbers array
 function callRandomFunction() {
     const randomIndex = Math.floor(Math.random()*randomFunctions.length);
@@ -97,6 +150,7 @@ function guess() {
     } else {
         if (tries >= 3 ) {
             hint.style.display = "block";
+            tries = 0
         }
         result.innerHTML = "Nope, try again"
     }
