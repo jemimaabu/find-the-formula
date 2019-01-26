@@ -10,7 +10,7 @@ var tries = 0;
 var numbers = [];
 
 /**  Array containing all random functions to be called. Function name must be included here */
-var randomFunctions = [addSquares, twiceAdded,subtractCube,cubedAdd,fibonacci, exponential_one, exponential_two, exponential_three, exponential_four, log_e]];
+var randomFunctions = [addSquares, twiceAdded,subtractCube,cubedAdd,fibonacci, exponential_one, exponential_two, exponential_three, exponential_four, log_e];
 
 /** Define your functions here */
 function addSquares() {
