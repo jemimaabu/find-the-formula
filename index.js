@@ -6,6 +6,9 @@ var result = document.getElementById("result");
 var hint = document.getElementById("hint");
 var tries = 0;
 
+/** Next button */
+var nextButton = document.querySelector(".next-pattern");
+
 /** The numbers array gets its values from whichever function is called */
 var numbers = [];
 
@@ -88,8 +91,17 @@ function displayPattern() {
 displayPattern();
 
 // Checks the users input against the last (hidden) element in the array
+
+// Change the initial style to none
+nextButton.style.display = "none";
+
 function guess() {
     tries++;
+
+    if (tries == 3) {
+        nextButton.style.display = "inline-block";
+    }
+
     if (nextNumber.value == numbers[numbers.length-1]) {
         result.innerHTML = "You win!";
         hint.innerHTML = "";
@@ -104,10 +116,12 @@ function guess() {
 
 // Function to call the next pattern
 function nextPattern() {
+    tries = 0;
     result.innerHTML = "";
     hint.style.display = "none";
     document.getElementById("display-pattern").innerHTML = "";
     numbers = [];
+    nextButton.style.display = "none";
     callRandomFunction();
     displayPattern();
 }
