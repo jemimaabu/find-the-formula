@@ -10,11 +10,12 @@ ___
 
 # Open Source
 This project is open to contributions from the public. 
-If you're a math nerd then feel free to add your own number pattern to the game (the more difficult it is to figure out, the better).
+
+If you're a math nerd, feel free to add your own number pattern to the game (the more difficult it is to figure out, the better).
 
 ## Contributing
 Checkout [CONTRIBUTING.md](.github/CONTRIBUTING.md) for details on adding patterns.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](.github/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
