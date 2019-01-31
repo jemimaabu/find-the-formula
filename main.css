@@ -4,27 +4,63 @@
 
 #display-pattern {
     display: inline-block;
+
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 #display-pattern span {
     border: 1px solid;
-    padding: 0.2em;
-    margin-right: 0.2em;
+    border-radius: .2em;
+    padding: 1em;
+    margin-right: 1em;
+    background: linear-gradient(rgba(221,221,221,.2), white)
+
+
 }
 
 #next-number {
-    width: 1.5em;
-    padding: 0.3em;
-    vertical-align: bottom;
-    border: 1px solid;
+    width: 2em;
+    border: 1.5px solid;
+    font-size: 12pt;
+    border-radius: .35em;
+    padding: 1em .5em 1em .5em;
+    transition: all .3s ease-in;
+    border-color: #0074D9;
 }
+#next-number:focus {
+    outline: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 3px #0074D9;
+}
+
 
 #hint {
     display: none;
+    
 }
 
 #hint::before {
-    content: "Hint: "
+    content: "Hint: ";
+}
+
+#submit-button {
+    outline: none;
+    background: none;
+    width: 10em;
+    border-color: #0074D9;
+    border-width: 1.5pt;
+    color:white;
+    padding: 8pt;
+    border-radius: 2em;
+    background-color: #0074D9;
+    margin-left: 5pt;
+    transition: all .3s ease-in;
+}
+#submit-button:hover {
+    background: white;
+    color: #0074D9;
 }
 
 @keyframes octocat-wave {
