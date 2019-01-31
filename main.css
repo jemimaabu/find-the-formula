@@ -2,6 +2,29 @@
 	animation: octocat-wave 560ms ease-in-out
 }
 
+button {
+	width: 90px;
+	height: 30px;
+	margin-left: 8%;
+	background: darkgreen;
+	color: white;
+	font-weight: 700;
+	border: none;
+	border-radius: 11%;
+	box-shadow: 2px 3px black;
+}
+button:hover {
+	transform: scale(1.02);
+	background-color: green;
+	cursor: pointer;
+}
+
+#next-number {
+	height: 17px;
+	top: 9.1px;
+	position: absolute;
+}
+
 #display-pattern {
     display: inline-block;
 }
