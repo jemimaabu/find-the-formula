@@ -13,6 +13,8 @@ button {
 	border-radius: 11%;
 	box-shadow: 2px 3px black;
 }
+}
+
 button:hover {
 	transform: scale(1.02);
 	background-color: green;
