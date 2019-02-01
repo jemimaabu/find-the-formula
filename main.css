@@ -38,3 +38,12 @@
 		transform:rotate(10deg)
 	}
 }
+
+.howto {
+	float:right;
+	border: 1.5px solid black;
+	padding:10px;
+	width:30%;
+	font-size:13pt;
+}
+
