@@ -13,20 +13,20 @@ h1 {
 
 .display-example {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 1.5em 0;
 }
 
 #display-pattern span, .display-example span {
+    display: inline-block;
     border: 1px solid;
     border-radius: .2em;
     padding: 1em;
-    margin-right: 1em;
+    margin: 0.5em 1em 0.5em 0em;
     background: linear-gradient(rgba(221,221,221,.2), white)
 }
 
-.display-example span:empty {
+.display-example span:last-of-type {
+    color: white;
     border: 1.5px solid #0074D9;
-    padding: 1em 1.25em;
 }
 
 #next-number {
@@ -200,7 +200,7 @@ h1 {
         display: inline;
     }
 
-    #display-pattern span {
+    #display-pattern span, .display-example span {
         display: inline-block;
         margin: 0.5em;
     }
