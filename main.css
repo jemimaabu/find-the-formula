@@ -25,7 +25,6 @@ h1 {
 }
 
 .display-example span:last-of-type {
-    color: white;
     border: 1.5px solid #0074D9;
 }
 
@@ -34,9 +33,10 @@ h1 {
     border: 1.5px solid;
     font-size: 12pt;
     border-radius: .35em;
-    padding: 1em .5em 1em .5em;
+    padding: 1em .5em;
     transition: all .3s ease-in;
     border-color: #0074D9;
+    text-align: center;
 }
 
 #next-number:focus {
