@@ -2,6 +2,10 @@
 	animation: octocat-wave 560ms ease-in-out
 }
 
+h1 {
+    margin: 0.5em;
+}
+
 #display-pattern {
     display: inline-block;
     font-family: Arial, Helvetica, sans-serif;
@@ -68,12 +72,14 @@
     margin-left: 1em;
 }
 
-.howto {
-	float:right;
-	border: 1.5px solid black;
-	padding:10px;
-	width:30%;
-	font-size:13pt;
+.howto {    
+    border: 1.5px solid black;
+    padding: 10px;
+    width: 30%;
+    font-size: 13pt;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .howto h2 {
@@ -81,7 +87,7 @@
 }
 
 #display-pattern-container {
-    margin: 1em;
+    margin: 0 1em 1em;
     display: inline-block;
 }
 
@@ -99,8 +105,12 @@
 }
 
 @media (max-width: 992px) {
+    h1 {
+        margin: 0.5em 0;
+    }
+    
     .howto {
-        float: left;
+        position: relative;
         width: auto;        
         margin-bottom: 0.5em;
     }
