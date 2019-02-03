@@ -158,6 +158,7 @@ displayPattern();
 function guess() {
     tries++;
     totalTries++;
+    document.getElementById("total-tries").innerHTML = totalTries;
 
     if (tries == 3) {
         nextButton.style.display = "inline-block";
@@ -165,6 +166,7 @@ function guess() {
 
     if (nextNumber.value == numbers[numbers.length-1]) {
         win++;
+        document.getElementById("wins").innerHTML = win;
         result.innerHTML = "You win!";
         result.style.color="#74d900";
         hint.innerHTML = "";

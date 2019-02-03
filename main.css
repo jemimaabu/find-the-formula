@@ -169,13 +169,21 @@ h1 {
     margin: 0 1em 1em;
 }
 
-#result-container {
+#result-container, #counter-container{
     margin: 0 1em;
     font-size: 13pt;
 }
 
-#result-container div {
+#result-container div, #counter-container div {
     margin: 0.5em 0;
+}
+
+#wins:before {
+    content: "Wins: "
+}
+
+#total-tries:before {
+    content: "Total tries: "
 }
 
 @media (max-width: 992px) {
