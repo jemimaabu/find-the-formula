@@ -4,9 +4,7 @@
 
 #display-pattern {
     display: inline-block;
-
     font-family: Arial, Helvetica, sans-serif;
-
 }
 
 #display-pattern span {
@@ -15,8 +13,6 @@
     padding: 1em;
     margin-right: 1em;
     background: linear-gradient(rgba(221,221,221,.2), white)
-
-
 }
 
 #next-number {
@@ -28,6 +24,7 @@
     transition: all .3s ease-in;
     border-color: #0074D9;
 }
+
 #next-number:focus {
     outline: none;
     border: none;
@@ -35,17 +32,20 @@
     box-shadow: 0 3px #0074D9;
 }
 
-
 #hint {
-    display: none;
-    
+    display: none;   
 }
 
 #hint::before {
     content: "Hint: ";
+    color: #0074D9;
 }
 
-#submit-button {
+#hint:empty::before {
+    content: "";
+}
+
+.button {
     outline: none;
     background: none;
     width: 10em;
@@ -53,14 +53,92 @@
     border-width: 1.5pt;
     color:white;
     padding: 8pt;
-    border-radius: 2em;
+    border-radius: .2em;
     background-color: #0074D9;
-    margin-left: 5pt;
     transition: all .3s ease-in;
 }
-#submit-button:hover {
+
+.button:hover {
     background: white;
     color: #0074D9;
+}
+
+#next-button {
+    display: none;
+    margin-left: 1em;
+}
+
+.howto {
+	float:right;
+	border: 1.5px solid black;
+	padding:10px;
+	width:30%;
+	font-size:13pt;
+}
+
+.howto h2 {
+    text-align: center;
+}
+
+#display-pattern-container {
+    margin: 1em;
+    display: inline-block;
+}
+
+#button-container {
+    margin: 0 1em 1em;
+}
+
+#result-container {
+    margin: 0 1em;
+    font-size: 13pt;
+}
+
+#result-container div {
+    margin: 0.5em 0;
+}
+
+@media (max-width: 992px) {
+    .howto {
+        float: left;
+        width: auto;        
+        margin-bottom: 0.5em;
+    }
+
+    #display-pattern-container {
+        display: block;
+        width: 75%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    #display-pattern {
+        display: inline;
+    }
+
+    #display-pattern span {
+        display: inline-block;
+        margin: 0.5em;
+    }
+
+    #next-number {
+        margin: 0.5em;
+    }
+
+    #button-container {
+        width: 75%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #button-container button{
+        margin: 0.5em;
+    }
+    
+    #result-container {
+        width: 75%;
+        margin: 0 auto;
+    }
 }
 
 @keyframes octocat-wave {
@@ -74,12 +152,3 @@
 		transform:rotate(10deg)
 	}
 }
-
-.howto {
-	float:right;
-	border: 1.5px solid black;
-	padding:10px;
-	width:30%;
-	font-size:13pt;
-}
-

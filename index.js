@@ -1,13 +1,11 @@
 var nextNumber = document.getElementById("next-number");
 var display = document.getElementById("display-pattern");
 var result = document.getElementById("result");
+var nextButton = document.getElementById("next-button");
 
 /** The hint value shows up after the user has tried a sequence more than 3 times, if the function assigns a value to it */
 var hint = document.getElementById("hint");
 var tries = 0;
-
-/** Next button */
-var nextButton = document.querySelector(".next-pattern");
 
 /** The numbers array gets its values from whichever function is called */
 var numbers = [];
@@ -115,10 +113,10 @@ function log_e() {
         let value = Math.log(randomnum+i)    
         numbers.push(toFixed(value, 2));
     }
-    hint.innerHTML = "Find out a random number added to index and Try some log on the it"
+    hint.innerHTML = "Find out a random number added to index and try some log on the it"
 }
-
-function toFixed( num, precision ) {        // This function helps to round up numbers. I didn't rely on Math.round because it doesn't round up number e.g math.round(6.345) = 6.34 instead of 6.35
+/** This function helps to round up numbers. I didn't rely on Math.round because it doesn't round up number e.g math.round(6.345) = 6.34 instead of 6.35 */ 
+function toFixed( num, precision ) {        
     return (+(Math.round(+(num + 'e' + precision)) + 'e' + -precision)).toFixed(precision);
 }
 
@@ -144,10 +142,6 @@ function displayPattern() {
 displayPattern();
 
 // Checks the users input against the last (hidden) element in the array
-
-// Change the initial style to none
-nextButton.style.display = "none";
-
 function guess() {
     tries++;
 
@@ -157,14 +151,25 @@ function guess() {
 
     if (nextNumber.value == numbers[numbers.length-1]) {
         result.innerHTML = "You win!";
+        result.style.color="#74d900";
         hint.innerHTML = "";
-        setTimeout(function(){ nextPattern(), nextNumber.value="" }, 1000);
+        setTimeout(function(){ nextPattern(), nextNumber.value=""}, 1000);
     } else {
         if (tries >= 3 ) {
             hint.style.display = "block";
         }
         result.innerHTML = "Nope, try again"
+        result.style.color = "#d90074"
     }
+}
+
+// Checks the users input when the Enter key is pressed
+nextNumber.onkeypress = function(event) {
+    if (event.which == 13 || event.keyCode == 13) {
+		guess();
+		return false;
+	}
+	return true;
 }
 
 // Function to call the next pattern
