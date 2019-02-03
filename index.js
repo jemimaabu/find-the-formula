@@ -198,3 +198,9 @@ function nextPattern() {
     callRandomFunction();
     displayPattern();
 }
+
+//Hide How-To Instructions
+document.getElementById("hide-instructions").onclick = function(e) {
+    e.preventDefault;
+    document.getElementById("how-to-container").classList.toggle("hidden")
+}

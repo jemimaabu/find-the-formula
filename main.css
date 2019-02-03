@@ -11,12 +11,22 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#display-pattern span {
+.display-example {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 1.5em 0;
+}
+
+#display-pattern span, .display-example span {
     border: 1px solid;
     border-radius: .2em;
     padding: 1em;
     margin-right: 1em;
     background: linear-gradient(rgba(221,221,221,.2), white)
+}
+
+.display-example span:empty {
+    border: 1.5px solid #0074D9;
+    padding: 1em 1.25em;
 }
 
 #next-number {
@@ -72,7 +82,7 @@ h1 {
     margin-left: 1em;
 }
 
-.howto {    
+#how-to-container {    
     border: 1.5px solid black;
     padding: 10px;
     width: 30%;
@@ -82,9 +92,31 @@ h1 {
     top: 0;
 }
 
-.howto h2 {
+#how-to {
+    transition: .5s;
+}
+
+#how-to-container.hidden #how-to {
+    height: 0;
+    overflow: hidden;
+}
+
+#how-to h2 {
     text-align: center;
 }
+
+#hide-instructions {
+    text-decoration: none;
+    color: #d96500;
+}
+
+#how-to-container #hide-instructions:before {
+    content: "Hide "
+} 
+
+#how-to-container.hidden #hide-instructions:before {
+    content: "Show "
+} 
 
 #difficulty-level {
     margin: 1em;
@@ -151,7 +183,7 @@ h1 {
         margin: 0.5em 0;
     }
 
-    .howto {
+    #how-to-container {
         position: relative;
         width: auto;        
         margin-bottom: 0.5em;
